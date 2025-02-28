@@ -13,13 +13,13 @@ let package = Package(
             targets: ["Checkpoints"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/curdicu/HsExtensions.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/horizontalsystems/HsExtensions.Swift.git", .upToNextMajor(from: "1.0.0")),
     ],
     targets: [
         .target(
             name: "Checkpoints",
             dependencies: [
-                .product(name: "HsExtensions", package: "HsExtensions"),
+                .product(name: "HsExtensions", package: "HsExtensions.Swift"),
             ],
             resources: [
                 .copy("Assets")
@@ -28,7 +28,7 @@ let package = Package(
             name: "CheckpointTests",
             dependencies: [
                 "Checkpoints",
-                .product(name: "HsExtensions", package: "HsExtensions"),
+                .product(name: "HsExtensions", package: "HsExtensions.Swift"),
             ]),
     ]
 )
